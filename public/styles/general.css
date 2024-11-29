@@ -1,0 +1,17 @@
+*{
+  font-family: 'Quicksand', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --dark-color: #364547;
+  --light-color: #2F5D62;
+  --back-light-color: #D3F1DF;
+}
+body{
+  width: 100vw;
+}
+#root{
+  width: 100%;
+}

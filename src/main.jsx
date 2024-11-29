@@ -5,6 +5,7 @@ import App from './App'
 import Home from '../components/Home'
 import Login from '../components/Login'
 import Register from '../components/Register'
+import CreateBlog from '../components/CreateBlog'
 import ProtectedRoute from '../components/ProtectedRoute'
 
 const createRouter = createBrowserRouter(
@@ -26,6 +27,14 @@ const createRouter = createBrowserRouter(
           element: (
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: '/createBlog',
+          element: (
+            <ProtectedRoute>
+              <CreateBlog/>
             </ProtectedRoute>
           ),
         },
