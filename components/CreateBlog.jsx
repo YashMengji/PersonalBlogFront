@@ -3,7 +3,7 @@ import {useState, useRef} from 'react'
 import { useAsyncFn } from '../hooks/useAsync.js'
 import {createPost} from '../services/posts.js'
 
-function CreateBlog() {
+function CreateBlog({posts, setPosts}) {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -27,6 +27,8 @@ function CreateBlog() {
       setContent('');
       setImage(null);
       imageTextRef.current.innerText = 'Drop or Choose an image';
+      setPosts([...posts, newBlog]);
+      console.log(posts);
     })
     .catch((error) => {
       console.error('Error creating blog post:', error);

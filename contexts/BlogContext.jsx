@@ -11,8 +11,8 @@ export function useBlog() {
 
 function BlogContext({children}) {
 
-  const [posts, setPosts] = useState({});
-  const [loading, error, value] = useAsync(getPosts);
+  const [posts, setPosts] = useState([]);
+  const { loading, error, value } = useAsync(getPosts);
 
   useEffect(() => {
     if (value) {
