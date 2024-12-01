@@ -34,7 +34,7 @@ function Post() {
                     <hr />
                   </>
                 ) : (
-                 <></>
+                 <h2> Loading... </h2>
                 )
               }
             </div>

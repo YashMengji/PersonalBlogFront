@@ -12,7 +12,9 @@ export function useBlog() {
 function BlogContext({children}) {
 
   const [posts, setPosts] = useState([]);
+  const [noImage, setNoImage] = useState([]);
   const [postImages, setPostImages] = useState({}); // State to store post images
+  const [search,  setSearch] = useState('');
   const { loading, error, value } = useAsync(getPosts);
 
   useEffect(() => {
@@ -21,6 +23,7 @@ function BlogContext({children}) {
       console.log(value);
     }
   }, [value]);
+
   useEffect(() => {
     const fetchImages = async () => {
       const images = {};
@@ -29,6 +32,10 @@ function BlogContext({children}) {
           const response = await getPostImg(post._id); // Fetch image
           if(response.size !== 0) {
             images[post._id] = URL.createObjectURL(response); // Convert to blob URL
+          }
+          else{
+            setNoImage(noImage => {return [...noImage, post._id]});
+            console.log(noImage);
           }
         } catch (error) {
           console.error(`Error fetching image for post ${post._id}:`, error);
@@ -46,6 +53,9 @@ function BlogContext({children}) {
         setPosts,
         postImages,
         setPostImages,
+        search,
+        setSearch,
+        noImage,
       }
     }
     >

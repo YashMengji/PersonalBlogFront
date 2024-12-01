@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import { useBlog } from '../contexts/BlogContext.jsx'
 
 function Navbar() {
 
   const showLogoutBtn = false;
+
+  const {search, setSearch} = useBlog();
 
   return (
     <div className="nav-div">
@@ -22,7 +25,7 @@ function Navbar() {
             <i className="fa-solid fa-house fa-xl"></i>
           </Link>
         </div>
-        <input className="search-bar" type="text" placeholder="Search" />
+        <input className="search-bar" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
         <button className="search-icon-button" >
           <img className="search-icon" src="/images/search.svg" />
         </button>
