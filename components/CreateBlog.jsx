@@ -2,13 +2,15 @@ import React from 'react'
 import {useState, useRef} from 'react'
 import { useAsyncFn } from '../hooks/useAsync.js'
 import {createPost} from '../services/posts.js'
+import { useBlog } from '../contexts/BlogContext.js'
 
-function CreateBlog({posts, setPosts}) {
+function CreateBlog() {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
   const imageTextRef = useRef(null);
+  const {posts, setPosts} = useBlog();
 
   const createPostFn = useAsyncFn(createPost);
 
