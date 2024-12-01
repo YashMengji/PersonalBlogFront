@@ -1,0 +1,20 @@
+.post-div{
+  margin: 65px 50px 0px 50px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 20px;
+}
+.div-post-img{
+}
+.post-img{
+  width: max-content;
+  max-width: 400px;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  margin: 15px 0px;
+  /* margin-bottom: 15px; */
+}
+.div-post-content {
+  padding-top: 15px;
+}

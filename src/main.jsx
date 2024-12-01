@@ -7,6 +7,7 @@ import Login from '../components/Login'
 import Register from '../components/Register'
 import CreateBlog from '../components/CreateBlog'
 import ProtectedRoute from '../components/ProtectedRoute'
+import Post from '../components/Post'
 
 const createRouter = createBrowserRouter(
   [
@@ -38,8 +39,14 @@ const createRouter = createBrowserRouter(
             </ProtectedRoute>
           ),
         },
- 
-       
+        {
+          path: "/posts/:id",
+          element: (
+            <ProtectedRoute>
+              <Post/>
+            </ProtectedRoute>
+          ),
+        }  
       ]
     }
   ]
