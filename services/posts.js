@@ -7,3 +7,7 @@ export function createPost(formData) {
 export function getPosts() {
     return makeRequests('GET', '/posts');
 }
+
+export function getPostImg(id) {
+    return makeRequests('GET', `/posts/${id}/image`);
+}

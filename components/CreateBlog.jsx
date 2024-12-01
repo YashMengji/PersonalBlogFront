@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useRef} from 'react'
 import { useAsyncFn } from '../hooks/useAsync.js'
 import {createPost} from '../services/posts.js'
-import { useBlog } from '../contexts/BlogContext.js'
+import { useBlog } from '../contexts/BlogContext.jsx'
 
 function CreateBlog() {
 

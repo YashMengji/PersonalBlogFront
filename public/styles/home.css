@@ -1,13 +1,76 @@
 .home-div{
   background-color: var(--back-light-color);
   position: relative;
-  width: 60%;
+  width: 55%;
   min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin: 0px auto 0px auto;
-  padding-top: 57px; /* EXPERIMENTING PADDING INSTEAD OF MARGIN */
+  margin: 20px auto 0px auto;
+  padding-top: 57px; /* EXPERIMENTING PADDING INSTEAD OF MARGIN - To avoid horizontal scroll bar */
 }
+.div-post-card{
+  display: flex;
+  width: 98%;
+  height: 150px;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid rgb(195, 195, 195);
+}
+.div-post-card-img{
+  width: 200px;
+  min-width: 200px;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: rgb(233, 233, 233);
+}
+.post-card-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.no-image-text{
+  padding: 4px;
+  display: inline-block;
+}
+.post-link{
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+  user-drag: none;
+}
+.div-post-card-info {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 200px);
+  height: 100%;
+  cursor: pointer;
+}
+.div-post-card-title{
+  /* background-color: rgb(255, 223, 108); */
+  width: 100%;
+  border-top-right-radius: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 8px 8px 0px 8px;
+  color: black;
+  transition: color .15s;
+}
+.div-post-card-title:hover{
+  color: blue;
+}
+.div-post-card-content {
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 15px;
+  font-size: 16px;
+  padding: 0px 8px 8px 8px;
+  overflow: hidden;
+  text-align: justify;
+}
+
+

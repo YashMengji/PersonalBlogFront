@@ -17,6 +17,7 @@ function BlogContext({children}) {
   useEffect(() => {
     if (value) {
       setPosts(value);
+      console.log(value);
     }
   }, [value]);
 

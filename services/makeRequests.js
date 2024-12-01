@@ -2,12 +2,23 @@ import axios from "axios"
 
 const api = axios.create({
   baseURL: "/api",
-  withCredentials: true
+  withCredentials: true,
+  
 });
 
-export function makeRequests(method, url, data) {
+export function makeRequests(
+      method, 
+      url, 
+      data,
+    ) {
   const headers = data instanceof FormData ? { 'Content-Type': 'multipart/form-data' } : {};
-  return api({ method, url, data, headers })
+  return api({ 
+      method, 
+      url, 
+      data, 
+      headers, 
+      responseType: method === 'GET' && url.includes('/image') ? 'blob' : 'json', 
+    })
     .then(res => res.data)
     .catch(error => Promise.reject(error?.response?.data?.message ?? "Error"));
 }
