@@ -45,11 +45,11 @@ function Navbar() {
                 </button>
               // </Link>
             ) : (
-              <Link to="/login" className="login-btn-link">
+         
                 <button className="sign-in-btn">
-                  Sign In
+                  Welcome
                 </button>
-              </Link>
+       
             )
           }
         </div>

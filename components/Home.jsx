@@ -16,15 +16,21 @@ function Home() {
             (
               <div className="div-post-card" key={post._id}>
                 <div className="div-post-card-img">
-                  { postImages[post._id] ? 
+                  { 
+                    noImage.includes(post._id) ?
                     (
-                      <img
-                        src={postImages[post._id]}
-                        alt={post.title}
-                        className="post-card-img"
-                      />
-                    ) : (
-                      <p className='no-image-text'>No Image</p>
+                      <h3 className='no-image-text'>No Image</h3>
+                    ) : (  
+                      postImages[post._id] ? 
+                      (
+                        <img
+                          src={postImages[post._id]}
+                          alt={post.title}
+                          className="post-card-img"
+                        />
+                      ) : (
+                        <h3 className='no-image-text'>Loading...</h3>
+                      )
                     )
                   }
                 </div>

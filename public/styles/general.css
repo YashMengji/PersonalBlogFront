@@ -7,10 +7,11 @@
 :root{
   --dark-color: #364547;
   --light-color: #2F5D62;
-  --back-light-color: #D3F1DF;
+  --back-light-color: #c3dfff;
 }
 body{
   width: 100vw;
+  overflow-x: hidden;
 }
 #root{
   width: 100%;
