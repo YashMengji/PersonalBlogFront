@@ -6,6 +6,7 @@ dotenv.config();
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
+    host: "0.0.0.0", //Allows the server to be accessed from any IP address
     proxy: {
       "/api": {
         target: process.env.VITE_SERVER_URL, //URL of backend
